@@ -24,14 +24,12 @@ onMounted(() => {
 </template> -->
 <template>
   <div style="display: flex;flex-direction: column;background-color: #F5C5BD;">
-    <audio
-      hidden="true"
-      id="audio"
+    <audio :hidden="true" id="audio"
     >
       <source src="/song.mp3" type="audio/mp3">
     </audio>
 
-    <div v-bind:class="{'active': animated}" @click="open" style="position: fixed;height: 100vh;width: 100vw;background-color: pink;display: flex;align-items: center;justify-content: center;font-size: 3rem;">
+    <div :class="{'active': animated}" @click="open" style="position: fixed;height: 100vh;width: 100vw;background-color: pink;display: flex;align-items: center;justify-content: center;font-size: 3rem;">
       Поздравление от Алибека<br> на 8-ое марта
     </div>
 
@@ -46,14 +44,14 @@ onMounted(() => {
     <div style="height:100%;width: 100%;">
       <img src="/2.jpg" style="max-width: 100%;max-height: 100vh;margin: auto;"/>
     </div>
-    <div class="flower" @click="party">
+    <div class-name="flower" @click="party">
       <Renderer resize="parent" ref="renderer" :alpha="true">
         <Camera :position="{ z: 1 }" />
         <Scene>
             <PointLight :position="{ y: 50, z: 50 }" />
             <AmbientLight color="#ffffff"/>
             <!-- <FbxModel src="./public/rose.fbx" ref="rose" :position="{x:0,y:0,z:0}" :rotation="{z:50}"/> -->
-            <GltfModel src="./public/scene.gltf"  ref="rose"/>
+            <GltfModel src="/scene.gltf"  ref="rose"/>
         </Scene>
       </Renderer>
     </div>
