@@ -88,12 +88,12 @@ export default defineComponent({
         party.confetti(party.Rect.fromScreen(), {shapes: ["star"]});
       },
       
+      open(){
+          const audio = <HTMLVideoElement> document.getElementById("audio");
+          audio?.play()
+          this.animated = true
+        }
     },
-    open(){
-        const audio = <HTMLVideoElement> document.getElementById("audio");
-        audio?.play()
-        this.animated = true
-      }
 });
 </script>
 <style scoped>
