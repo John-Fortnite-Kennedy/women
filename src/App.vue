@@ -37,14 +37,14 @@ onMounted(() => {
 
     <div style="height:100%;width: 100%;">
       <!--  background-image: url('1.jpg');background-size: contain;-->
-      <img src="1.jpg" style="max-width: 100%;max-height: 100vh;margin: auto;"/>
+      <img src="/1.jpg" style="max-width: 100%;max-height: 100vh;margin: auto;"/>
     </div>
     <div style="height:100%;width: 85%;padding: 5%;display: flex;flex-direction:column;text-align: center;font-size: 1.5rem;border:2.5vw solid #FCFAFA;">
       <h1>Поздравляю с 8-ым марта!</h1>
       <p>Милые, добрые и очаровательные, мама и сестренки! Поздравляю с Международным женским днем! Желаю весеннего настроения, улыбок, тепла и вдохновения. Пусть счастьем и любовью наполнится душа и сердце. Люблю, целую, обнимаю. Посылаю вам тепло, нежность и любовь в праздник 8 Марта!</p>
     </div>
     <div style="height:100%;width: 100%;">
-      <img src="2.jpg" style="max-width: 100%;max-height: 100vh;margin: auto;"/>
+      <img src="/2.jpg" style="max-width: 100%;max-height: 100vh;margin: auto;"/>
     </div>
     <div class="flower" @click="party">
       <Renderer resize="parent" ref="renderer" :alpha="true">
