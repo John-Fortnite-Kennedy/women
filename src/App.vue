@@ -92,7 +92,7 @@ export default defineComponent({
     open(){
         const audio = <HTMLVideoElement> document.getElementById("audio");
         audio?.play()
-        this.animated.value = true
+        this.animated = true
       }
 });
 </script>
