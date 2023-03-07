@@ -85,6 +85,6 @@ export default defineComponent({
   }
 }
 .flower{
-  height: 100vh;width: 100%;background-image: url('3.jpg');background-size: 100% 100%;
+  height: 100vh;width: 100%;background-image: url('/3.jpg');background-size: 100% 100%;
 }
 </style>
