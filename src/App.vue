@@ -68,8 +68,8 @@ export default defineComponent({
       return {animated}
     },
     setup() {
-        const renderer = ref(null);
-        const rose = ref(null);
+        const renderer = ref();
+        const rose = ref();
         
         onMounted(() => {
             renderer?.value?.onBeforeRender(() => {
