@@ -1,35 +1,12 @@
-<!-- <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { supabase } from './lib/supabaseClient'
-import  HelloWorld from './components/HelloWorld.vue'
-
-const countries = <any>ref([])
-
-async function getCountries() {
-  const { data } = await supabase.from('countries').select()
-  countries.value = data
-}
-
-onMounted(() => {
-  getCountries()
-})
-</script>
-
-<template>
-  <ul>
-    <li v-for="country in countries" :key="country.id">{{ country.name }}</li>
-  </ul>
-  bruh
-  <HelloWorld></HelloWorld>
-</template> -->
+/* eslint-disable */
 <template>
   <div style="display: flex;flex-direction: column;background-color: #F5C5BD;">
     <audio :hidden="true" id="audio"
     >
       <source src="/song.mp3" type="audio/mp3">
     </audio>
-
-    <div v-class="{active: animated}" @click="open" style="position: fixed;height: 100vh;width: 100vw;background-color: pink;display: flex;align-items: center;justify-content: center;font-size: 3rem;">
+    <span></span>
+    <div id="overlay" :class="{active: animated}" @click="open" style="position: fixed;height: 100vh;width: 100vw;background-color: pink;display: flex;align-items: center;justify-content: center;font-size: 3rem;">
       Поздравление от Алибека<br> на 8-ое марта
     </div>
 
@@ -44,7 +21,7 @@ onMounted(() => {
     <div style="height:100%;width: 100%;">
       <img src="/2.jpg" style="max-width: 100%;max-height: 100vh;margin: auto;"/>
     </div>
-    <div class-name="flower" @click="party">
+    <div class="flower" @click="party">
       <Renderer resize="parent" ref="renderer" :alpha="true">
         <Camera :position="{ z: 1 }" />
         <Scene>
@@ -71,10 +48,8 @@ export default defineComponent({
         
         onMounted(() => {
             renderer?.value?.onBeforeRender(() => {
-                //console.log(rose.value.scene.rotation.z)
                 rose.value.scene.rotation.y += 0.01;
             });
-            // audio.value!.muted=true
         });
         return {
             renderer,
@@ -85,7 +60,6 @@ export default defineComponent({
       party(){
         party.confetti(party.Rect.fromScreen(), {shapes: ["star"]});
       },
-      
       open(){
           const audio = <HTMLVideoElement> document.getElementById("audio");
           audio?.play()
