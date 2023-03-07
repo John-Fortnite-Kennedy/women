@@ -31,7 +31,7 @@ onMounted(() => {
       <source src="song.mp3" type="audio/mp3">
     </audio>
 
-    <div :class="{active: animated}" @click="open()" style="position: fixed;height: 100vh;width: 100vw;background-color: pink;display: flex;align-items: center;justify-content: center;font-size: 3rem;">
+    <div v-bind:class="{'active': animated}" @click="open" style="position: fixed;height: 100vh;width: 100vw;background-color: pink;display: flex;align-items: center;justify-content: center;font-size: 3rem;">
       Поздравление от Алибека<br> на 8-ое марта
     </div>
 
@@ -46,7 +46,7 @@ onMounted(() => {
     <div style="height:100%;width: 100%;">
       <img src="2.jpg" style="max-width: 100%;max-height: 100vh;margin: auto;"/>
     </div>
-    <div style="height: 100vh;width: 100%;background-image: url('3.jpg');background-size: 100% 100%;" @click="party">
+    <div class="flower" @click="party">
       <Renderer resize="parent" ref="renderer" :alpha="true">
         <Camera :position="{ z: 1 }" />
         <Scene>
@@ -87,13 +87,13 @@ export default defineComponent({
       party(){
         party.confetti(party.Rect.fromScreen(), {shapes: ["star"]});
       },
-      open(){
-        const audio =  document.getElementById("audio");
-        audio?.play().then(()=>{console.log(audio.value)})
-        this.animated = true
-        
+      
+    },
+    open(){
+        const audio = <HTMLVideoElement> document.getElementById("audio");
+        audio?.play()
+        this.animated.value = true
       }
-    }
 });
 </script>
 <style scoped>
@@ -111,5 +111,8 @@ export default defineComponent({
     opacity: 0;
     display: none !important;
   }
+}
+.flower{
+  height: 100vh;width: 100%;background-image: url('3.jpg');background-size: 100% 100%;
 }
 </style>
