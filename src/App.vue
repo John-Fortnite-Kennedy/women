@@ -28,7 +28,7 @@ onMounted(() => {
       hidden="true"
       id="audio"
     >
-      <source src="song.mp3" type="audio/mp3">
+      <source src="/song.mp3" type="audio/mp3">
     </audio>
 
     <div v-bind:class="{'active': animated}" @click="open" style="position: fixed;height: 100vh;width: 100vw;background-color: pink;display: flex;align-items: center;justify-content: center;font-size: 3rem;">
